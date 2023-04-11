@@ -1,12 +1,16 @@
 // This function stores our state.
 const storeState = () => {
   let currentState = {};
+  console.log(currentState)
   return (stateChangeFunction = state => state) => {
     const newState = stateChangeFunction(currentState);
     currentState = { ...newState };
+    console.log(currentState);
     return newState;
   }
 }
+
+
 
 const stateControl = storeState();
 
